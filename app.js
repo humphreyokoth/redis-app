@@ -6,15 +6,16 @@ const routes = require('./routes/routes');
 
 
 
-
+// Routes
+app.use('/api',postRoutes);
 
 const app = express();
 const PORT = 3000;
 
 //MongoClient
-//const uri = "mongodb://localhost:27017";
+const uri = "mongodb://localhost:27017";
 //const uri = "";
-const uri = process.env.DATABASE_URL
+//const uri = process.env.DATABASE_URL
 
 const client = new MongoClient(uri,{useNewUrlParser: true,useUnifiedTopology: true});
  let db;
