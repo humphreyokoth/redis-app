@@ -2,6 +2,10 @@ const express = require('express');
 const MongoClient = require('mongodb').MongoClient;
 const redis = require('redis');
 require('dotenv').config();
+const routes = require('./routes/routes');
+
+
+
 
 
 const app = express();
@@ -23,6 +27,7 @@ const client = new MongoClient(uri,{useNewUrlParser: true,useUnifiedTopology: tr
 const redisClient = redis.createClient();
 
 app.use(express.json());
+app.use('/api/',routes);
 
 app.listen(PORT,()=>{
     console.log(`Server is running on ${PORT}`);

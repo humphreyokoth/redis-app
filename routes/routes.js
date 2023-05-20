@@ -1,3 +1,13 @@
+const express = require('express');
+const router = express.Router()
+
+
+
+
+
+
+
+
 app.post('/posts', async(req,res)=>{
     const post = req.body;
     try {
@@ -48,3 +58,6 @@ app.put('/posts/:id',async(req,res)=>{
         res.status(500).json({error:"An error occured while updating the post"});
     }
 })
+
+
+module.exports = router;
