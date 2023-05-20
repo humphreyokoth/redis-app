@@ -22,3 +22,7 @@ const client = new MongoClient(uri,{useNewUrlParser: true,useUnifiedTopology: tr
 const redisClient = redis.createClient();
 
 app.use(express.json());
+
+app.listen(PORT,()=>{
+    console.log(`Server is running on ${PORT}`);
+});
