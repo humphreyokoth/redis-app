@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router()
-
+const redis = require('redis');
+const redisClient = redis.createClient();
 
 
 router.post('/posts', async(req,res)=>{
